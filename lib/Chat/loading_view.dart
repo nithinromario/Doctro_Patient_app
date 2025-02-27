@@ -7,7 +7,7 @@ class LoadingView extends StatelessWidget {
     return Container(
       child: Center(
         child: CircularProgressIndicator(
-          color: Palette.blue,
+          valueColor: AlwaysStoppedAnimation(Palette.blue),
         ),
       ),
       color: Colors.white.withOpacity(0.8),

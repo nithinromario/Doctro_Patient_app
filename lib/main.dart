@@ -94,6 +94,26 @@ void main() async {
   runApp(MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Patient',
+      initialRoute: '/', // Set initial route to splash screen
+      routes: {
+        '/': (context) => SplashScreen(), // Splash screen route
+        '/home': (context) => Home(), // Home screen route
+        'SignIn': (context) => SignIn(),
+        // Define other routes...
+      },
+      theme: ThemeData(
+        primaryColor: Palette.blue,
+        // Other theme settings...
+      ),
+    );
+  }
+}
+
 final GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
